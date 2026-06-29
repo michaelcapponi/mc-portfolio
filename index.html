@@ -393,6 +393,7 @@ nav.scrolled {
 .edu-deg { font-family:var(--fh); font-size:1.05rem; font-weight:700; margin-bottom:8px; line-height:1.4; }
 .edu-school { font-size:.88rem; color:var(--blue); font-weight:500; margin-bottom:6px; }
 .edu-period { font-family:var(--fm); font-size:.78rem; color:var(--text-3); }
+.edu-grade { display:inline-flex; align-items:center; gap:5px; margin-top:10px; padding:3px 11px; border-radius:50px; font-family:var(--fm); font-size:.74rem; font-weight:600; background:linear-gradient(135deg,rgba(79,142,247,.12),rgba(168,85,247,.12)); color:var(--blue); border:1px solid rgba(79,142,247,.2); }
 
 /* ================================================
    PROJECTS
@@ -677,10 +678,9 @@ footer span { color:var(--text-2); }
   <div class="container">
     <span class="section-label" data-i18n="edu.label">// academic background</span>
     <h2 class="section-title" data-i18n="edu.title">Education</h2>
-    <p class="section-desc" data-i18n="edu.desc">Computer engineering foundations from Sapienza — one of Europe's most prestigious technical universities.</p>
     <div class="edu-grid">
-      <div class="edu-card"><div class="edu-deg" data-i18n="edu.deg1">M.Sc. Engineering in Computer Science</div><div class="edu-school" data-i18n="edu.school">Sapienza Università di Roma</div><div class="edu-period" data-i18n="edu.period1">Oct 2018 — Oct 2020</div></div>
-      <div class="edu-card"><div class="edu-deg" data-i18n="edu.deg2">B.Sc. Computer Engineering &amp; Automation</div><div class="edu-school" data-i18n="edu.school">Sapienza Università di Roma</div><div class="edu-period" data-i18n="edu.period2">Sep 2015 — Oct 2018</div></div>
+      <div class="edu-card"><div class="edu-deg" data-i18n="edu.deg1">M.Sc. Engineering in Computer Science</div><div class="edu-school" data-i18n="edu.school">Sapienza Università di Roma</div><div class="edu-period" data-i18n="edu.period1">Oct 2018 — Oct 2020</div><div class="edu-grade"><span data-i18n="edu.grade">110/110 cum laude</span></div></div>
+      <div class="edu-card"><div class="edu-deg" data-i18n="edu.deg2">B.Sc. Computer Engineering &amp; Automation</div><div class="edu-school" data-i18n="edu.school">Sapienza Università di Roma</div><div class="edu-period" data-i18n="edu.period2">Sep 2015 — Oct 2018</div><div class="edu-grade"><span data-i18n="edu.grade">110/110 cum laude</span></div></div>
     </div>
   </div>
 </section>
@@ -784,7 +784,7 @@ const T = {
     'edu.desc':'Computer engineering foundations from Sapienza — one of Europe\'s most prestigious technical universities.',
     'edu.deg1':'M.Sc. Engineering in Computer Science','edu.school':'Sapienza Università di Roma',
     'edu.deg2':'B.Sc. Computer Engineering & Automation',
-    'edu.period1':'Oct 2018 — Oct 2020','edu.period2':'Sep 2015 — Oct 2018',
+    'edu.period1':'Oct 2018 — Oct 2020','edu.period2':'Sep 2015 — Oct 2018','edu.grade':'110/110 cum laude',
     'proj.label':'// work & projects',
     'proj.title':'Featured <span class="gradient-text">Projects</span>',
     'proj.desc':'Notable projects and architectural work — coming soon.',
@@ -844,7 +844,7 @@ const T = {
     'edu.desc':'Basi di ingegneria informatica alla Sapienza — una delle università tecniche più prestigiose d\'Europa.',
     'edu.deg1':'Laurea Magistrale in Engineering in Computer Science','edu.school':'Sapienza Università di Roma',
     'edu.deg2':'Laurea Triennale in Ingegneria Informatica e Automatica',
-    'edu.period1':'Ott 2018 — Ott 2020','edu.period2':'Set 2015 — Ott 2018',
+    'edu.period1':'Ott 2018 — Ott 2020','edu.period2':'Set 2015 — Ott 2018','edu.grade':'110/110 e Lode',
     'proj.label':'// lavori & progetti',
     'proj.title':'Progetti <span class="gradient-text">in evidenza</span>',
     'proj.desc':'Progetti architetturali e casi di studio — in arrivo.',
