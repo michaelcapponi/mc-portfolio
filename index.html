@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Michael Capponi — Senior Cloud Architect & DevOps Engineer specializing in AWS, GCP, Kubernetes, and Terraform.">
+  <title>Michael Capponi | Cloud Architect & DevOps</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+
+/* ================================================
+   DARK THEME VARIABLES (default)
+================================================ */
+:root {
+  --bg:           #060c1a;
+  --bg2:          #0c1428;
+  --glass:        rgba(255,255,255,0.04);
+  --glass-border: rgba(255,255,255,0.08);
+  --glass-hover:  rgba(255,255,255,0.065);
+  --blue:         #4f8ef7;
+  --blue-dim:     rgba(79,142,247,0.13);
+  --cyan:         #22d3ee;
+  --cyan-dim:     rgba(34,211,238,0.11);
+  --purple:       #a855f7;
+  --purple-dim:   rgba(168,85,247,0.11);
+  --green:        #10b981;
+  --green-dim:    rgba(16,185,129,0.11);
+  --orange:       #f59e0b;
+  --red:          #ef4444;
+  --text:         #e2e8f0;
+  --text-2:       #94a3b8;
+  --text-3:       #475569;
+  --grad-bp:      linear-gradient(135deg,#4f8ef7 0%,#a855f7 100%);
+  --fh: 'Space Grotesk', sans-serif;
+  --fb: 'Inter', sans-serif;
+  --fm: 'JetBrains Mono', monospace;
+  --r: 14px; --r-sm: 8px; --nav-h: 68px;
+  --shadow: 0 8px 32px rgba(0,0,0,0.45);
+  --canvas-opacity: .45;
+  --nav-scrolled-bg: rgba(6,12,26,.88);
+}
+
+/* ================================================
+   LIGHT THEME OVERRIDES
+================================================ */
+body.light {
+  --bg:           #f3f6ff;
+  --bg2:          #e8edf8;
+  --glass:        rgba(255,255,255,0.75);
+  --glass-border: rgba(15,23,42,0.09);
+  --glass-hover:  rgba(255,255,255,0.95);
+  --text:         #111827;
+  --text-2:       #374151;
+  --text-3:       #6b7280;
+  --blue-dim:     rgba(79,142,247,0.10);
+  --cyan-dim:     rgba(34,211,238,0.09);
+  --purple-dim:   rgba(168,85,247,0.09);
+  --green-dim:    rgba(16,185,129,0.09);
+  --shadow:       0 4px 24px rgba(15,23,42,0.10);
+  --canvas-opacity: .12;
+  --nav-scrolled-bg: rgba(243,246,255,.92);
+}
+body.light nav.scrolled {
+  box-shadow: 0 1px 0 rgba(15,23,42,0.08);
+}
+body.light .tl-card,
+body.light .sk-cat,
+body.light .cert-card,
+body.light .about-card,
+body.light .edu-card,
+body.light .hero-panel-card,
+body.light .c-link,
+body.light .projects-placeholder {
+  background: rgba(255,255,255,0.88);
+  border-color: rgba(15,23,42,0.07);
+}
+body.light .tl-card:hover,
+body.light .sk-cat:hover,
+body.light .cert-card:hover,
+body.light .about-card:hover,
+body.light .edu-card:hover,
+body.light .hero-panel-card:hover,
+body.light .c-link:hover {
+  background: #fff;
+  border-color: rgba(15,23,42,0.11);
+  box-shadow: 0 8px 28px rgba(15,23,42,0.11);
+}
+body.light .ctrl-btn {
+  background: rgba(255,255,255,0.75);
+  border-color: rgba(15,23,42,0.10);
+  color: var(--text-2);
+}
+body.light .ctrl-btn:hover {
+  background: #fff;
+  color: var(--text);
+}
+body.light .mobile-toggle span { background: var(--text); }
+body.light .nav-links.open {
+  background: rgba(243,246,255,0.97);
+  border-bottom-color: rgba(15,23,42,0.08);
+}
+body.light .pill-base {
+  background: rgba(15,23,42,0.05);
+  color: var(--text-3);
+  border-color: rgba(15,23,42,0.10);
+}
+body.light .tech-tag {
+  background: rgba(255,255,255,0.80);
+  border-color: rgba(15,23,42,0.09);
+}
+body.light .tech-tag:hover {
+  background: var(--blue-dim);
+  border-color: rgba(79,142,247,0.28);
+  color: var(--blue);
+}
+body.light .btn-outline {
+  border-color: rgba(15,23,42,0.15);
+  color: var(--text);
+}
+body.light .btn-outline:hover { background: rgba(255,255,255,0.9); }
+body.light .tl-tag {
+  background: var(--blue-dim);
+  border-color: rgba(79,142,247,0.12);
+}
+body.light .timeline::before { opacity: .18; }
+body.light .hero-avatar img { border-color: var(--bg); }
+
+/* body transition for smooth theme switch */
+body { transition: background .35s, color .35s; }
+
+/* ================================================
+   RESET & BASE
+================================================ */
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body {
+  font-family: var(--fb);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+a { color:inherit; text-decoration:none; }
+ul { list-style:none; }
+.container { width:100%; max-width:1140px; margin:0 auto; padding:0 28px; }
+.section { padding:104px 0; }
+.section-label {
+  font-family:var(--fm); font-size:.73rem; color:var(--cyan);
+  letter-spacing:.16em; text-transform:uppercase; display:block; margin-bottom:14px;
+}
+.section-title {
+  font-family:var(--fh); font-size:clamp(1.9rem,4vw,2.7rem);
+  font-weight:700; line-height:1.18; margin-bottom:16px;
+}
+.section-desc {
+  color:var(--text-2); font-size:1.02rem; max-width:560px;
+  margin-bottom:60px; line-height:1.75;
+}
+.gradient-text {
+  background:var(--grad-bp);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+}
+
+/* ================================================
+   CANVAS
+================================================ */
+#bg-canvas {
+  position:fixed; inset:0; pointer-events:none; z-index:0;
+  opacity: var(--canvas-opacity);
+  transition: opacity .35s;
+}
+
+/* ================================================
+   NAV
+================================================ */
+nav {
+  position:fixed; top:0; left:0; right:0;
+  height:var(--nav-h); z-index:1000;
+  transition:background .3s,box-shadow .3s;
+}
+nav.scrolled {
+  background: var(--nav-scrolled-bg);
+  backdrop-filter:blur(22px); -webkit-backdrop-filter:blur(22px);
+  box-shadow:0 1px 0 var(--glass-border);
+}
+.nav-inner { display:flex; align-items:center; justify-content:space-between; height:var(--nav-h); }
+.nav-logo {
+  font-family:var(--fh); font-size:1.22rem; font-weight:700;
+  background:var(--grad-bp); -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent; background-clip:text;
+}
+.nav-links { display:flex; gap:26px; align-items:center; }
+.nav-links a {
+  font-size:.875rem; font-weight:500; color:var(--text-2);
+  transition:color .2s; position:relative;
+}
+.nav-links a:hover { color:var(--text); }
+.nav-links a::after {
+  content:''; position:absolute; bottom:-4px; left:0;
+  width:0; height:1.5px; background:var(--grad-bp); transition:width .3s;
+}
+.nav-links a:hover::after { width:100%; }
+.nav-cta {
+  padding:8px 20px !important; border-radius:50px;
+  background:var(--grad-bp) !important; color:white !important;
+  font-weight:600 !important; transition:opacity .2s,transform .2s !important;
+}
+.nav-cta:hover { opacity:.88; transform:translateY(-1px); }
+.nav-cta::after { display:none !important; }
+
+/* controls: theme + lang */
+.nav-controls { display:flex; align-items:center; gap:8px; margin-left:6px; }
+.ctrl-btn {
+  height:34px; border-radius:50px;
+  border:1px solid var(--glass-border); background:var(--glass);
+  color:var(--text-2); cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  transition:all .2s; font-family:var(--fm);
+}
+.ctrl-btn:hover { background:var(--glass-hover); color:var(--text); border-color:rgba(79,142,247,.3); }
+.theme-btn { width:34px; font-size:.95rem; }
+.lang-btn { padding:0 13px; gap:5px; font-size:.72rem; letter-spacing:.05em; }
+.lang-btn .la { color:var(--text-3); transition:color .2s; }
+.lang-btn .la.on { color:var(--blue); font-weight:700; }
+.lang-btn .ls { color:var(--text-3); font-weight:300; }
+
+.mobile-toggle {
+  display:none; flex-direction:column; gap:5px;
+  cursor:pointer; padding:4px; background:none; border:none;
+}
+.mobile-toggle span {
+  display:block; width:24px; height:2px;
+  background:var(--text); border-radius:2px; transition:all .3s;
+}
+
+/* ================================================
+   HERO
+================================================ */
+#hero {
+  min-height:100vh; display:flex; align-items:center;
+  position:relative; z-index:1; padding-top:var(--nav-h);
+}
+.hero-inner {
+  display:grid; grid-template-columns:1fr 400px;
+  gap:60px; align-items:center; width:100%;
+}
+.hero-content {
+  display:flex; flex-direction:column; gap:22px;
+  animation:fadeInUp .8s ease both;
+}
+.hero-avatar { width:148px; height:148px; border-radius:50%; padding:3px; background:var(--grad-bp); flex-shrink:0; }
+.hero-avatar img { width:100%; height:100%; border-radius:50%; object-fit:cover; object-position:center 12%; display:block; border:3px solid var(--bg); transition:border-color .35s; image-rendering:-webkit-optimize-contrast; }
+.hero-badge {
+  display:inline-flex; align-items:center; gap:8px; padding:6px 16px;
+  border-radius:50px; border:1px solid rgba(16,185,129,.25);
+  background:rgba(16,185,129,.08); font-family:var(--fm);
+  font-size:.75rem; color:var(--green); width:fit-content;
+}
+.hero-badge-dot { width:7px; height:7px; border-radius:50%; background:var(--green); animation:pulse-dot 2s ease-in-out infinite; }
+.hero-name { font-family:var(--fh); font-size:clamp(2.8rem,7vw,5.2rem); font-weight:700; line-height:1.06; letter-spacing:-.025em; }
+.hero-title-wrap { font-family:var(--fh); font-size:clamp(1rem,2.2vw,1.3rem); color:var(--text-2); font-weight:400; min-height:1.8rem; }
+.typed-cursor { display:inline-block; width:2px; height:1.15em; background:var(--cyan); margin-left:2px; vertical-align:middle; animation:blink 1s step-end infinite; }
+.hero-desc { font-size:.98rem; color:var(--text-2); max-width:520px; line-height:1.78; }
+.hero-tech { display:flex; flex-wrap:wrap; gap:9px; }
+.tech-tag {
+  padding:5px 13px; border-radius:var(--r-sm);
+  background:var(--glass); border:1px solid var(--glass-border);
+  font-family:var(--fm); font-size:.73rem; color:var(--text-2); transition:all .2s;
+}
+.tech-tag:hover { background:var(--blue-dim); border-color:rgba(79,142,247,.28); color:var(--blue); }
+.hero-actions { display:flex; gap:12px; flex-wrap:wrap; }
+.btn-primary {
+  padding:13px 26px; border-radius:50px; background:var(--grad-bp);
+  color:white; font-weight:600; font-size:.94rem; cursor:pointer; border:none;
+  display:inline-flex; align-items:center; gap:8px; transition:transform .2s,box-shadow .2s;
+}
+.btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(79,142,247,.35); }
+.btn-outline {
+  padding:12px 26px; border-radius:50px; background:transparent;
+  color:var(--text); font-weight:600; font-size:.94rem; cursor:pointer;
+  border:1px solid var(--glass-border); display:inline-flex; align-items:center; gap:8px; transition:all .2s;
+}
+.btn-outline:hover { background:var(--glass); border-color:rgba(255,255,255,.15); transform:translateY(-2px); }
+.hero-stats { display:flex; gap:28px; padding-top:18px; border-top:1px solid var(--glass-border); }
+.stat-val { font-family:var(--fh); font-size:1.75rem; font-weight:700; background:var(--grad-bp); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.stat-lbl { font-size:.77rem; color:var(--text-3); font-weight:500; text-transform:uppercase; letter-spacing:.05em; margin-top:3px; }
+.hero-panel { display:flex; flex-direction:column; gap:14px; animation:fadeInUp .8s .2s ease both; }
+.hero-panel-card {
+  padding:18px 22px; border-radius:var(--r);
+  background:var(--glass); border:1px solid var(--glass-border);
+  display:flex; align-items:center; gap:14px; transition:all .3s;
+}
+.hero-panel-card:hover { background:var(--glass-hover); transform:translateX(-4px); box-shadow:var(--shadow); }
+.hp-icon { width:42px; height:42px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0; }
+.hp-name { font-family:var(--fh); font-size:.92rem; font-weight:600; margin-bottom:2px; }
+.hp-sub { font-size:.76rem; color:var(--text-3); }
+.hp-year { margin-left:auto; font-family:var(--fm); font-size:.74rem; color:var(--text-3); }
+.scroll-hint {
+  position:absolute; bottom:30px; left:50%; transform:translateX(-50%);
+  display:flex; flex-direction:column; align-items:center; gap:6px;
+  color:var(--text-3); font-size:.73rem; font-family:var(--fm);
+  animation:float 2.2s ease-in-out infinite;
+}
+
+/* ================================================
+   ABOUT
+================================================ */
+#about { position:relative; z-index:1; }
+.about-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start; }
+.about-text p { color:var(--text-2); margin-bottom:18px; line-height:1.82; }
+.about-text p strong { color:var(--text); font-weight:600; }
+.about-cards { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.about-card { padding:22px; border-radius:var(--r); background:var(--glass); border:1px solid var(--glass-border); transition:all .3s; }
+.about-card:hover { background:var(--glass-hover); transform:translateY(-3px); box-shadow:var(--shadow); }
+.ac-icon { width:38px; height:38px; border-radius:var(--r-sm); display:flex; align-items:center; justify-content:center; font-size:1.15rem; margin-bottom:12px; }
+.ac-val { font-family:var(--fh); font-size:1.5rem; font-weight:700; margin-bottom:4px; }
+.ac-lbl { font-size:.77rem; color:var(--text-3); text-transform:uppercase; letter-spacing:.05em; }
+
+/* ================================================
+   EXPERIENCE
+================================================ */
+#experience { position:relative; z-index:1; }
+.timeline { position:relative; padding-left:44px; }
+.timeline::before {
+  content:''; position:absolute; left:9px; top:0; bottom:0; width:1px;
+  background:linear-gradient(180deg,var(--blue),var(--purple) 60%,var(--cyan)); opacity:.28;
+}
+.tl-item { position:relative; margin-bottom:46px; opacity:0; transform:translateX(-18px); transition:opacity .55s ease,transform .55s ease; }
+.tl-item.visible { opacity:1; transform:translateX(0); }
+.tl-dot { position:absolute; left:-38px; top:26px; width:16px; height:16px; border-radius:50%; border:2px solid var(--blue); background:var(--bg); transition:background .35s; }
+.tl-item.current .tl-dot { background:var(--green); border-color:var(--green); box-shadow:0 0 14px rgba(16,185,129,.55); }
+.tl-card { padding:28px 32px; border-radius:var(--r); background:var(--glass); border:1px solid var(--glass-border); transition:all .3s; }
+.tl-card:hover { background:var(--glass-hover); border-color:rgba(255,255,255,.11); box-shadow:var(--shadow); transform:translateX(4px); }
+.tl-head { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:12px; margin-bottom:18px; }
+.tl-role { font-family:var(--fh); font-size:1.18rem; font-weight:700; }
+.tl-co { font-size:.88rem; color:var(--blue); font-weight:500; margin-top:4px; }
+.tl-meta { display:flex; flex-direction:column; align-items:flex-end; gap:6px; }
+.tl-period { font-family:var(--fm); font-size:.78rem; color:var(--text-3); }
+.tl-badge { padding:3px 10px; border-radius:50px; font-size:.7rem; font-weight:600; text-transform:uppercase; letter-spacing:.05em; }
+.badge-now  { background:rgba(16,185,129,.1); color:var(--green); border:1px solid rgba(16,185,129,.2); }
+.badge-past { background:var(--glass); color:var(--text-3); border:1px solid var(--glass-border); }
+.tl-list { display:flex; flex-direction:column; gap:9px; }
+.tl-list li { font-size:.89rem; color:var(--text-2); padding-left:18px; position:relative; line-height:1.65; }
+.tl-list li::before { content:'→'; position:absolute; left:0; color:var(--cyan); font-size:.8rem; }
+.tl-tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; padding-top:16px; border-top:1px solid var(--glass-border); }
+.tl-tag { padding:4px 10px; border-radius:var(--r-sm); font-family:var(--fm); font-size:.71rem; background:var(--blue-dim); color:var(--blue); border:1px solid rgba(79,142,247,.15); }
+
+/* ================================================
+   SKILLS
+================================================ */
+#skills { position:relative; z-index:1; }
+.skills-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.sk-cat { padding:26px; border-radius:var(--r); background:var(--glass); border:1px solid var(--glass-border); transition:all .3s; opacity:0; transform:translateY(18px); }
+.sk-cat.visible { opacity:1; transform:translateY(0); }
+.sk-cat:hover { background:var(--glass-hover); box-shadow:var(--shadow); }
+.sk-head { display:flex; align-items:center; gap:10px; margin-bottom:18px; }
+.sk-icon { width:34px; height:34px; border-radius:var(--r-sm); display:flex; align-items:center; justify-content:center; font-size:.95rem; }
+.sk-title { font-family:var(--fh); font-size:.93rem; font-weight:600; }
+.sk-pills { display:flex; flex-wrap:wrap; gap:7px; }
+.pill { padding:5px 11px; border-radius:var(--r-sm); font-family:var(--fm); font-size:.75rem; font-weight:500; transition:all .2s; }
+.pill:hover { transform:translateY(-1px); }
+.pill-adv  { background:rgba(79,142,247,.09);  color:var(--blue);   border:1px solid rgba(79,142,247,.18); }
+.pill-mid  { background:rgba(168,85,247,.09);  color:var(--purple); border:1px solid rgba(168,85,247,.18); }
+.pill-base { background:var(--glass);           color:var(--text-3); border:1px solid var(--glass-border); }
+.skills-legend { display:flex; gap:20px; flex-wrap:wrap; margin-top:22px; }
+.legend-item { display:flex; align-items:center; gap:7px; font-size:.78rem; color:var(--text-3); }
+.legend-dot { width:10px; height:10px; border-radius:3px; display:inline-block; }
+
+/* ================================================
+   CERTIFICATIONS
+================================================ */
+#certifications { position:relative; z-index:1; }
+.certs-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }
+.cert-card { padding:22px; border-radius:var(--r); background:var(--glass); border:1px solid var(--glass-border); display:flex; align-items:flex-start; gap:16px; transition:all .3s; opacity:0; transform:translateY(14px); }
+.cert-card.visible { opacity:1; transform:translateY(0); }
+.cert-card:hover { background:var(--glass-hover); transform:translateY(-3px); box-shadow:var(--shadow); }
+.cert-ico { width:46px; height:46px; border-radius:11px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0; }
+.cert-name { font-family:var(--fh); font-size:.93rem; font-weight:600; margin-bottom:4px; line-height:1.4; }
+.cert-issuer { font-size:.78rem; color:var(--text-3); margin-bottom:8px; }
+.cert-yr { display:inline-block; padding:2px 9px; border-radius:4px; font-family:var(--fm); font-size:.7rem; font-weight:500; }
+
+/* ================================================
+   EDUCATION
+================================================ */
+#education { position:relative; z-index:1; }
+.edu-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+.edu-card { padding:30px 32px; border-radius:var(--r); background:var(--glass); border:1px solid var(--glass-border); position:relative; overflow:hidden; transition:all .3s; }
+.edu-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:var(--grad-bp); }
+.edu-card:hover { background:var(--glass-hover); transform:translateY(-3px); box-shadow:var(--shadow); }
+.edu-deg { font-family:var(--fh); font-size:1.05rem; font-weight:700; margin-bottom:8px; line-height:1.4; }
+.edu-school { font-size:.88rem; color:var(--blue); font-weight:500; margin-bottom:6px; }
+.edu-period { font-family:var(--fm); font-size:.78rem; color:var(--text-3); }
+
+/* ================================================
+   PROJECTS
+================================================ */
+#projects { position:relative; z-index:1; }
+.projects-placeholder { padding:64px; border-radius:var(--r); background:var(--glass); border:1px dashed var(--glass-border); text-align:center; }
+.projects-placeholder h3 { font-family:var(--fh); font-size:1.2rem; color:var(--text-2); margin-bottom:10px; }
+.projects-placeholder p { font-size:.9rem; color:var(--text-3); }
+
+/* ================================================
+   CONTACT
+================================================ */
+#contact { position:relative; z-index:1; }
+.contact-wrap { max-width:640px; margin:0 auto; text-align:center; }
+.contact-wrap .section-title,.contact-wrap .section-desc { text-align:center; margin-left:auto; margin-right:auto; }
+.contact-links { display:flex; flex-direction:column; gap:12px; max-width:420px; margin:0 auto; }
+.c-link { padding:16px 22px; border-radius:var(--r); background:var(--glass); border:1px solid var(--glass-border); display:flex; align-items:center; gap:14px; transition:all .3s; }
+.c-link:hover { background:var(--glass-hover); transform:translateX(4px); border-color:rgba(255,255,255,.12); }
+.c-icon { width:40px; height:40px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.05rem; flex-shrink:0; }
+.c-lbl { font-size:.73rem; color:var(--text-3); text-transform:uppercase; letter-spacing:.06em; margin-bottom:2px; }
+.c-val { font-family:var(--fm); font-size:.88rem; font-weight:500; }
+
+/* ================================================
+   FOOTER
+================================================ */
+footer { position:relative; z-index:1; padding:40px 0; border-top:1px solid var(--glass-border); text-align:center; color:var(--text-3); font-size:.78rem; }
+footer span { color:var(--text-2); }
+
+/* ================================================
+   KEYFRAMES
+================================================ */
+@keyframes fadeInUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+@keyframes pulse-dot { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.35);opacity:.65} }
+@keyframes blink { 0%,50%{opacity:1} 51%,100%{opacity:0} }
+@keyframes float { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(-7px)} }
+
+/* ================================================
+   RESPONSIVE
+================================================ */
+@media(max-width:1000px){
+  .hero-inner{grid-template-columns:1fr;gap:44px}
+  .hero-panel{display:none}
+  .about-grid{grid-template-columns:1fr;gap:44px}
+  .skills-grid{grid-template-columns:repeat(2,1fr)}
+  .edu-grid{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  .nav-links{display:none}
+  .nav-links.open{display:flex;flex-direction:column;position:fixed;top:var(--nav-h);left:0;right:0;background:var(--nav-scrolled-bg);backdrop-filter:blur(22px);padding:24px;gap:24px;border-bottom:1px solid var(--glass-border)}
+  .mobile-toggle{display:flex}
+  .skills-grid{grid-template-columns:1fr}
+  .about-cards{grid-template-columns:1fr 1fr}
+  .hero-stats{gap:18px}
+  .stat-val{font-size:1.45rem}
+  .section{padding:70px 0}
+  .certs-grid{grid-template-columns:1fr}
+  .nav-controls .lang-btn span.la:not(.on){display:none}
+  .nav-controls .lang-btn .ls{display:none}
+}
+  </style>
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a href="#hero" class="nav-logo">MC</a>
+
+    <div class="nav-links" id="nav-links">
+      <a href="#about"          data-i18n="nav.about">About</a>
+      <a href="#experience"     data-i18n="nav.exp">Experience</a>
+      <a href="#skills"         data-i18n="nav.skills">Skills</a>
+      <a href="#certifications" data-i18n="nav.certs">Certifications</a>
+      <a href="#education"      data-i18n="nav.edu">Education</a>
+      <a href="#projects"       data-i18n="nav.projects">Projects</a>
+      <a href="https://www.linkedin.com/in/michael-capponi-1410751b4" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <a href="#contact" class="nav-cta" data-i18n="nav.contact">Contact</a>
+    </div>
+
+    <div class="nav-controls">
+      <button class="ctrl-btn theme-btn" id="theme-btn" title="Toggle theme">🌙</button>
+      <button class="ctrl-btn lang-btn"  id="lang-btn">
+        <span class="la on" id="la-en">EN</span>
+        <span class="ls">|</span>
+        <span class="la"    id="la-it">IT</span>
+      </button>
+      <button class="mobile-toggle" id="mob-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-avatar"><img src="propic.jpg" alt="Michael Capponi"></div>
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          <span data-i18n="hero.badge">Available for new opportunities</span>
+        </div>
+        <h1 class="hero-name">Michael<br><span class="gradient-text">Capponi</span></h1>
+        <div class="hero-title-wrap"><span id="typed-text"></span><span class="typed-cursor"></span></div>
+        <p class="hero-desc" data-i18n="hero.desc">Senior Cloud Architect &amp; DevOps Engineer with 5+ years designing and deploying scalable, resilient cloud infrastructures on AWS and GCP — from initial assessment to production operations.</p>
+        <div class="hero-tech">
+          <span class="tech-tag">☁️ AWS</span>
+          <span class="tech-tag">🔷 GCP</span>
+          <span class="tech-tag">⎈ Kubernetes</span>
+          <span class="tech-tag">🏗️ Terraform</span>
+          <span class="tech-tag">🔄 ArgoCD</span>
+          <span class="tech-tag">🚀 GitLab CI</span>
+          <span class="tech-tag">🐍 Python</span>
+        </div>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span data-i18n="hero.btn.contact">Get in Touch</span>
+          </a>
+          <a href="#experience" class="btn-outline">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+            <span data-i18n="hero.btn.exp">View Experience</span>
+          </a>
+          <a href="https://www.linkedin.com/in/michael-capponi-1410751b4" target="_blank" rel="noopener" class="btn-outline">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div><div class="stat-val" data-target="5" data-suffix="+">0</div><div class="stat-lbl" data-i18n="hero.stat.years">Years Exp.</div></div>
+          <div><div class="stat-val" data-target="7" data-suffix="">0</div><div class="stat-lbl" data-i18n="hero.stat.certs">Certifications</div></div>
+          <div><div class="stat-val" data-target="3" data-suffix="">0</div><div class="stat-lbl" data-i18n="hero.stat.companies">Companies</div></div>
+          <div><div class="stat-val" data-target="2" data-suffix="">0</div><div class="stat-lbl" data-i18n="hero.stat.clouds">Cloud Platforms</div></div>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="hero-panel-card"><div class="hp-icon" style="background:rgba(255,153,0,.12);color:#FF9900">☁️</div><div><div class="hp-name">AWS Solutions Architect</div><div class="hp-sub">Professional · Amazon</div></div><div class="hp-year">2022</div></div>
+        <div class="hero-panel-card"><div class="hp-icon" style="background:rgba(66,133,244,.12);color:#4285F4">🏗️</div><div><div class="hp-name">GCP Professional Cloud Architect</div><div class="hp-sub">Google Cloud</div></div><div class="hp-year">2025</div></div>
+        <div class="hero-panel-card"><div class="hp-icon" style="background:rgba(34,211,238,.12);color:#22d3ee">⎈</div><div><div class="hp-name">Certified Kubernetes Admin</div><div class="hp-sub">CKA · CNCF</div></div><div class="hp-year">2022</div></div>
+        <div class="hero-panel-card"><div class="hp-icon" style="background:rgba(255,153,0,.12);color:#FF9900">🌐</div><div><div class="hp-name">AWS Advanced Networking</div><div class="hp-sub">Specialty · Amazon</div></div><div class="hp-year">2024</div></div>
+        <div class="hero-panel-card"><div class="hp-icon" style="background:rgba(66,133,244,.12);color:#4285F4">🤖</div><div><div class="hp-name">Google Generative AI Leader</div><div class="hp-sub">Google</div></div><div class="hp-year">2026</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint"><span data-i18n="scroll">scroll</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <span class="section-label" data-i18n="about.label">// about me</span>
+        <h2 class="section-title" data-i18n-html="about.title">Building the <span class="gradient-text">cloud layer</span> of tomorrow</h2>
+        <p data-i18n-html="about.p1">I'm a <strong>Senior Cloud Architect &amp; DevOps Engineer</strong> based in Padova, Italy. With over 5 years in IT, I've built deep expertise guiding organizations through cloud transformation — from architectural design to production operations.</p>
+        <p data-i18n-html="about.p2">My core focus is <strong>AWS and GCP</strong> infrastructure: designing scalable, secure, cost-optimized architectures and automating deployments with Terraform, Kubernetes, and modern CI/CD tooling. I've led migrations of enterprise-grade systems including SAP 4HANA and SAP CRM.</p>
+        <p data-i18n-html="about.p3">I believe in pairing hands-on experience with solid theoretical foundations — reflected in <strong>7 industry certifications</strong> covering cloud architecture, Kubernetes administration, advanced networking, ITIL operations, and generative AI leadership.</p>
+      </div>
+      <div class="about-cards">
+        <div class="about-card"><div class="ac-icon" style="background:var(--blue-dim);color:var(--blue)">☁️</div><div class="ac-val gradient-text">AWS</div><div class="ac-lbl" data-i18n="about.card.aws">Solutions Architect Pro</div></div>
+        <div class="about-card"><div class="ac-icon" style="background:rgba(66,133,244,.12);color:#4285F4">🔷</div><div class="ac-val" style="color:#4285F4">GCP</div><div class="ac-lbl" data-i18n="about.card.gcp">Professional Cloud Arch.</div></div>
+        <div class="about-card"><div class="ac-icon" style="background:var(--cyan-dim);color:var(--cyan)">⎈</div><div class="ac-val" style="color:var(--cyan)">CKA</div><div class="ac-lbl" data-i18n="about.card.cka">Kubernetes Administrator</div></div>
+        <div class="about-card"><div class="ac-icon" style="background:var(--purple-dim);color:var(--purple)">📋</div><div class="ac-val" style="color:var(--purple)">ITIL</div><div class="ac-lbl" data-i18n="about.card.itil">v4 Foundation Certified</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="section">
+  <div class="container">
+    <span class="section-label" data-i18n="exp.label">// career path</span>
+    <h2 class="section-title" data-i18n-html="exp.title">Professional <span class="gradient-text">Experience</span></h2>
+    <p class="section-desc" data-i18n="exp.desc">A journey through cloud architecture, DevOps, and security engineering at leading Italian tech consultancies.</p>
+    <div class="timeline">
+
+      <div class="tl-item current">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-head">
+            <div><div class="tl-role" data-i18n="exp.role1">Senior Cloud Architect / DevOps</div><div class="tl-co">Elevate GO (prev. Ennova GO) · Padova</div></div>
+            <div class="tl-meta"><span class="tl-period" data-i18n="exp.period1">Feb 2025 — Present</span><span class="tl-badge badge-now" data-i18n="exp.badge1">Current</span></div>
+          </div>
+          <ul class="tl-list">
+            <li data-i18n="exp.li1.1">Full-lifecycle DevOps operations: design and configuration of CI/CD pipelines using GitLab, Jenkins, Nexus, SonarQube, XLRelease, Helm, ArgoCD, and Rancher</li>
+            <li data-i18n="exp.li1.2">Cloud architecture assessment &amp; design focused on scalability, resilience, security, and cost optimization — aligned to cloud best practices and frameworks</li>
+            <li data-i18n="exp.li1.3">GCP infrastructure design and deployment via Infrastructure as Code (Terraform)</li>
+            <li data-i18n="exp.li1.4">Multi-cloud analysis and architectural design across GCP and AWS</li>
+            <li data-i18n="exp.li1.5">GCP Foundation management: organization structure, billing, environment standardization, network topology, and policy governance</li>
+          </ul>
+          <div class="tl-tags"><span class="tl-tag">GCP</span><span class="tl-tag">AWS</span><span class="tl-tag">GitLab CI</span><span class="tl-tag">ArgoCD</span><span class="tl-tag">Helm</span><span class="tl-tag">Terraform</span><span class="tl-tag">Rancher</span><span class="tl-tag">Jenkins</span><span class="tl-tag">Kubernetes</span></div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-head">
+            <div><div class="tl-role" data-i18n="exp.role2">Cloud Architect</div><div class="tl-co">Storm Reply · Italy</div></div>
+            <div class="tl-meta"><span class="tl-period" data-i18n="exp.period2">Mar 2021 — Feb 2025</span><span class="tl-badge badge-past" data-i18n="exp.badge2">4 years</span></div>
+          </div>
+          <ul class="tl-list">
+            <li data-i18n="exp.li2.1">AWS cloud assessment, architecture design, and end-to-end delivery for enterprise clients</li>
+            <li data-i18n="exp.li2.2">Led cloud migrations of SAP 4HANA, SAP CRM, data ingestion platforms, and microservices to AWS</li>
+            <li data-i18n="exp.li2.3">Infrastructure as Code with Terraform; administration of Kubernetes-based microservices architectures</li>
+            <li data-i18n="exp.li2.4">ITIL Operations governance: Incident &amp; Problem Management, Change Management, Risk Management, SLA compliance</li>
+            <li data-i18n="exp.li2.5">Team Leader role: technical &amp; economic evaluation and prioritization of Delivery and MSP activities</li>
+            <li data-i18n="exp.li2.6">VM provisioning and management on Linux and Windows Server environments</li>
+            <li data-i18n="exp.li2.7">Atlassian suite usage: Confluence, Jira, Bitbucket</li>
+          </ul>
+          <div class="tl-tags"><span class="tl-tag">AWS</span><span class="tl-tag">Terraform</span><span class="tl-tag">Kubernetes</span><span class="tl-tag">SAP 4HANA</span><span class="tl-tag">ITIL</span><span class="tl-tag">Atlassian</span><span class="tl-tag">Linux</span></div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-head">
+            <div><div class="tl-role" data-i18n="exp.role3">Cyber Security Engineer</div><div class="tl-co">TIM (Telecom Italia) · Italy</div></div>
+            <div class="tl-meta"><span class="tl-period" data-i18n="exp.period3">Oct 2020 — Mar 2021</span><span class="tl-badge badge-past" data-i18n="exp.badge3">6 months</span></div>
+          </div>
+          <ul class="tl-list">
+            <li data-i18n="exp.li3.1">Risk assessment and analysis for PAM (Privileged Access Management) systems</li>
+            <li data-i18n="exp.li3.2">Definition of security measures to mitigate risks and align with GDPR compliance best practices</li>
+          </ul>
+          <div class="tl-tags"><span class="tl-tag">Cyber Security</span><span class="tl-tag">PAM</span><span class="tl-tag">GDPR</span><span class="tl-tag">Risk Analysis</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section">
+  <div class="container">
+    <span class="section-label" data-i18n="skills.label">// tech stack</span>
+    <h2 class="section-title" data-i18n-html="skills.title">Skills &amp; <span class="gradient-text">Technologies</span></h2>
+    <p class="section-desc" data-i18n="skills.desc">A curated overview of the tools and technologies I use to build and operate cloud infrastructure.</p>
+    <div class="skills-grid">
+      <div class="sk-cat"><div class="sk-head"><div class="sk-icon" style="background:var(--blue-dim);color:var(--blue)">☁️</div><span class="sk-title" data-i18n="skills.cat1">Cloud Platforms</span></div><div class="sk-pills"><span class="pill pill-adv">AWS</span><span class="pill pill-adv">GCP</span><span class="pill pill-adv">Cloud Migration</span><span class="pill pill-adv">Multi-cloud</span><span class="pill pill-mid">GCP Foundation</span></div></div>
+      <div class="sk-cat"><div class="sk-head"><div class="sk-icon" style="background:var(--cyan-dim);color:var(--cyan)">🏗️</div><span class="sk-title" data-i18n="skills.cat2">Infrastructure &amp; IaC</span></div><div class="sk-pills"><span class="pill pill-adv">Terraform</span><span class="pill pill-adv">Kubernetes</span><span class="pill pill-mid">Helm</span><span class="pill pill-base">Ansible</span><span class="pill pill-adv">Linux</span><span class="pill pill-adv">Windows Server</span></div></div>
+      <div class="sk-cat"><div class="sk-head"><div class="sk-icon" style="background:var(--purple-dim);color:var(--purple)">🔄</div><span class="sk-title" data-i18n="skills.cat3">DevOps &amp; CI/CD</span></div><div class="sk-pills"><span class="pill pill-adv">GitLab</span><span class="pill pill-adv">ArgoCD</span><span class="pill pill-adv">Rancher</span><span class="pill pill-mid">Jenkins</span><span class="pill pill-mid">Nexus</span><span class="pill pill-mid">SonarQube</span><span class="pill pill-mid">XLRelease</span></div></div>
+      <div class="sk-cat"><div class="sk-head"><div class="sk-icon" style="background:var(--green-dim);color:var(--green)">💻</div><span class="sk-title" data-i18n="skills.cat4">Programming</span></div><div class="sk-pills"><span class="pill pill-adv">Python</span><span class="pill pill-adv">JavaScript</span><span class="pill pill-adv">Node.js</span><span class="pill pill-base">Java</span><span class="pill pill-base">C</span></div></div>
+      <div class="sk-cat"><div class="sk-head"><div class="sk-icon" style="background:rgba(245,158,11,.1);color:var(--orange)">🗄️</div><span class="sk-title" data-i18n="skills.cat5">Databases</span></div><div class="sk-pills"><span class="pill pill-mid">PostgreSQL</span><span class="pill pill-mid">MySQL</span><span class="pill pill-mid">MongoDB</span><span class="pill pill-base">Oracle</span></div></div>
+      <div class="sk-cat"><div class="sk-head"><div class="sk-icon" style="background:rgba(239,68,68,.1);color:var(--red)">📋</div><span class="sk-title" data-i18n="skills.cat6">Operations &amp; Governance</span></div><div class="sk-pills"><span class="pill pill-adv">ITIL v4</span><span class="pill pill-adv">Jira</span><span class="pill pill-adv">Confluence</span><span class="pill pill-adv">Bitbucket</span><span class="pill pill-adv">Team Leadership</span><span class="pill pill-adv">GDPR</span></div></div>
+    </div>
+    <div class="skills-legend">
+      <div class="legend-item"><span class="legend-dot" style="background:rgba(79,142,247,.09);border:1px solid rgba(79,142,247,.18)"></span><span data-i18n="skills.leg.adv">Advanced</span></div>
+      <div class="legend-item"><span class="legend-dot" style="background:rgba(168,85,247,.09);border:1px solid rgba(168,85,247,.18)"></span><span data-i18n="skills.leg.mid">Intermediate</span></div>
+      <div class="legend-item"><span class="legend-dot" style="background:var(--glass);border:1px solid var(--glass-border)"></span><span data-i18n="skills.leg.base">Familiar</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications" class="section">
+  <div class="container">
+    <span class="section-label" data-i18n="certs.label">// credentials</span>
+    <h2 class="section-title" data-i18n="certs.title">Certifications</h2>
+    <p class="section-desc" data-i18n="certs.desc">Industry-recognized certifications validating expertise across cloud, infrastructure, operations, and AI.</p>
+    <div class="certs-grid">
+      <div class="cert-card" style="transition-delay:.05s"><div class="cert-ico" style="background:rgba(255,153,0,.1);color:#FF9900">☁️</div><div><div class="cert-name">AWS Solutions Architect — Professional</div><div class="cert-issuer">Amazon Web Services</div><span class="cert-yr" style="background:rgba(255,153,0,.1);color:#FF9900;border:1px solid rgba(255,153,0,.2)">2022</span></div></div>
+      <div class="cert-card" style="transition-delay:.1s"><div class="cert-ico" style="background:rgba(255,153,0,.1);color:#FF9900">🌐</div><div><div class="cert-name">AWS Advanced Networking — Specialty</div><div class="cert-issuer">Amazon Web Services</div><span class="cert-yr" style="background:rgba(255,153,0,.1);color:#FF9900;border:1px solid rgba(255,153,0,.2)">2024</span></div></div>
+      <div class="cert-card" style="transition-delay:.15s"><div class="cert-ico" style="background:rgba(66,133,244,.1);color:#4285F4">🏗️</div><div><div class="cert-name">GCP Professional Cloud Architect</div><div class="cert-issuer">Google Cloud</div><span class="cert-yr" style="background:rgba(66,133,244,.1);color:#4285F4;border:1px solid rgba(66,133,244,.2)">2025</span></div></div>
+      <div class="cert-card" style="transition-delay:.2s"><div class="cert-ico" style="background:rgba(66,133,244,.1);color:#4285F4">⚙️</div><div><div class="cert-name">Google Professional Workspace Administrator</div><div class="cert-issuer">Google</div><span class="cert-yr" style="background:rgba(66,133,244,.1);color:#4285F4;border:1px solid rgba(66,133,244,.2)">2025</span></div></div>
+      <div class="cert-card" style="transition-delay:.25s"><div class="cert-ico" style="background:rgba(66,133,244,.1);color:#4285F4">🤖</div><div><div class="cert-name">Google Generative AI Leader</div><div class="cert-issuer">Google</div><span class="cert-yr" style="background:rgba(66,133,244,.1);color:#4285F4;border:1px solid rgba(66,133,244,.2)">2026</span></div></div>
+      <div class="cert-card" style="transition-delay:.3s"><div class="cert-ico" style="background:rgba(34,211,238,.1);color:#22d3ee">⎈</div><div><div class="cert-name">Certified Kubernetes Administrator (CKA)</div><div class="cert-issuer">CNCF / Linux Foundation</div><span class="cert-yr" style="background:rgba(34,211,238,.1);color:#22d3ee;border:1px solid rgba(34,211,238,.2)">2022</span></div></div>
+      <div class="cert-card" style="transition-delay:.35s"><div class="cert-ico" style="background:var(--purple-dim);color:var(--purple)">📋</div><div><div class="cert-name">ITIL v4 Foundation</div><div class="cert-issuer">AXELOS / PeopleCert</div><span class="cert-yr" style="background:var(--purple-dim);color:var(--purple);border:1px solid rgba(168,85,247,.2)">2022</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="section">
+  <div class="container">
+    <span class="section-label" data-i18n="edu.label">// academic background</span>
+    <h2 class="section-title" data-i18n="edu.title">Education</h2>
+    <p class="section-desc" data-i18n="edu.desc">Computer engineering foundations from Sapienza — one of Europe's most prestigious technical universities.</p>
+    <div class="edu-grid">
+      <div class="edu-card"><div class="edu-deg" data-i18n="edu.deg1">M.Sc. Engineering in Computer Science</div><div class="edu-school" data-i18n="edu.school">Sapienza Università di Roma</div><div class="edu-period" data-i18n="edu.period1">Oct 2018 — Oct 2020</div></div>
+      <div class="edu-card"><div class="edu-deg" data-i18n="edu.deg2">B.Sc. Computer Engineering &amp; Automation</div><div class="edu-school" data-i18n="edu.school">Sapienza Università di Roma</div><div class="edu-period" data-i18n="edu.period2">Sep 2015 — Oct 2018</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+  <div class="container">
+    <span class="section-label" data-i18n="proj.label">// work &amp; projects</span>
+    <h2 class="section-title" data-i18n-html="proj.title">Featured <span class="gradient-text">Projects</span></h2>
+    <p class="section-desc" data-i18n="proj.desc">Notable projects and architectural work — coming soon.</p>
+    <div class="projects-placeholder">
+      <h3 data-i18n="proj.ph.title">Projects coming soon</h3>
+      <p data-i18n="proj.ph.desc">This section is ready for your case studies, side projects, and architectural write-ups.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="contact-wrap">
+      <span class="section-label" data-i18n="contact.label">// get in touch</span>
+      <h2 class="section-title" data-i18n-html="contact.title">Let's <span class="gradient-text">Connect</span></h2>
+      <p class="section-desc" data-i18n="contact.desc">Open to interesting challenges and conversations — whether you have a project in mind or just want to talk cloud architecture.</p>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/michael-capponi-1410751b4" target="_blank" rel="noopener" class="c-link">
+          <div class="c-icon" style="background:var(--blue-dim);color:#0A66C2"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
+          <div><div class="c-lbl">LinkedIn</div><div class="c-val">michael-capponi-1410751b4</div></div>
+        </a>
+        <a href="mailto:michael.capponi@ennovago.com" class="c-link">
+          <div class="c-icon" style="background:var(--blue-dim);color:var(--blue)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div><div class="c-lbl" data-i18n="contact.email.lbl">Email</div><div class="c-val">michael.capponi@ennovago.com</div></div>
+        </a>
+        <a href="tel:+393384413257" class="c-link">
+          <div class="c-icon" style="background:var(--green-dim);color:var(--green)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div><div class="c-lbl" data-i18n="contact.phone.lbl">Phone</div><div class="c-val">+39 338 441 3257</div></div>
+        </a>
+        <div class="c-link">
+          <div class="c-icon" style="background:var(--purple-dim);color:var(--purple)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><div class="c-lbl" data-i18n="contact.loc.lbl">Location</div><div class="c-val" data-i18n="contact.loc.val">Padova, Italy</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p><span data-i18n="footer.by">Designed &amp; built by</span> <span>Michael Capponi</span> · 2025</p>
+    <p style="margin-top:5px;font-size:.72rem;color:var(--text-3)" data-i18n="footer.role">Senior Cloud Architect &amp; DevOps Engineer · Padova, Italy</p>
+  </div>
+</footer>
+
+<script>
+/* ================================================
+   TRANSLATIONS
+================================================ */
+const T = {
+  en: {
+    'nav.about':'About','nav.exp':'Experience','nav.skills':'Skills',
+    'nav.certs':'Certifications','nav.edu':'Education','nav.projects':'Projects','nav.contact':'Contact',
+    'hero.badge':'Available for new opportunities',
+    'hero.desc':'Senior Cloud Architect & DevOps Engineer with 5+ years designing and deploying scalable, resilient cloud infrastructures on AWS and GCP — from initial assessment to production operations.',
+    'hero.btn.contact':'Get in Touch','hero.btn.exp':'View Experience',
+    'hero.stat.years':'Years Exp.','hero.stat.certs':'Certifications','hero.stat.companies':'Companies','hero.stat.clouds':'Cloud Platforms',
+    'about.label':'// about me',
+    'about.title':'Building the <span class="gradient-text">cloud layer</span> of tomorrow',
+    'about.p1':'I\'m a <strong>Senior Cloud Architect &amp; DevOps Engineer</strong> based in Padova, Italy. With over 5 years in IT, I\'ve built deep expertise guiding organizations through cloud transformation — from architectural design to production operations.',
+    'about.p2':'My core focus is <strong>AWS and GCP</strong> infrastructure: designing scalable, secure, cost-optimized architectures and automating deployments with Terraform, Kubernetes, and modern CI/CD tooling. I\'ve led migrations of enterprise-grade systems including SAP 4HANA and SAP CRM.',
+    'about.p3':'I believe in pairing hands-on experience with solid theoretical foundations — reflected in <strong>7 industry certifications</strong> covering cloud architecture, Kubernetes administration, advanced networking, ITIL operations, and generative AI leadership.',
+    'about.card.aws':'Solutions Architect Pro','about.card.gcp':'Professional Cloud Arch.','about.card.cka':'Kubernetes Administrator','about.card.itil':'v4 Foundation Certified',
+    'exp.label':'// career path',
+    'exp.title':'Professional <span class="gradient-text">Experience</span>',
+    'exp.desc':'A journey through cloud architecture, DevOps, and security engineering at leading Italian tech consultancies.',
+    'exp.role1':'Senior Cloud Architect / DevOps','exp.period1':'Feb 2025 — Present','exp.badge1':'Current',
+    'exp.li1.1':'Full-lifecycle DevOps operations: design and configuration of CI/CD pipelines using GitLab, Jenkins, Nexus, SonarQube, XLRelease, Helm, ArgoCD, and Rancher',
+    'exp.li1.2':'Cloud architecture assessment & design focused on scalability, resilience, security, and cost optimization — aligned to cloud best practices and frameworks',
+    'exp.li1.3':'GCP infrastructure design and deployment via Infrastructure as Code (Terraform)',
+    'exp.li1.4':'Multi-cloud analysis and architectural design across GCP and AWS',
+    'exp.li1.5':'GCP Foundation management: organization structure, billing, environment standardization, network topology, and policy governance',
+    'exp.role2':'Cloud Architect','exp.period2':'Mar 2021 — Feb 2025','exp.badge2':'4 years',
+    'exp.li2.1':'AWS cloud assessment, architecture design, and end-to-end delivery for enterprise clients',
+    'exp.li2.2':'Led cloud migrations of SAP 4HANA, SAP CRM, data ingestion platforms, and microservices to AWS',
+    'exp.li2.3':'Infrastructure as Code with Terraform; administration of Kubernetes-based microservices architectures',
+    'exp.li2.4':'ITIL Operations governance: Incident & Problem Management, Change Management, Risk Management, SLA compliance',
+    'exp.li2.5':'Team Leader role: technical & economic evaluation and prioritization of Delivery and MSP activities',
+    'exp.li2.6':'VM provisioning and management on Linux and Windows Server environments',
+    'exp.li2.7':'Atlassian suite usage: Confluence, Jira, Bitbucket',
+    'exp.role3':'Cyber Security Engineer','exp.period3':'Oct 2020 — Mar 2021','exp.badge3':'6 months',
+    'exp.li3.1':'Risk assessment and analysis for PAM (Privileged Access Management) systems',
+    'exp.li3.2':'Definition of security measures to mitigate risks and align with GDPR compliance best practices',
+    'skills.label':'// tech stack',
+    'skills.title':'Skills &amp; <span class="gradient-text">Technologies</span>',
+    'skills.desc':'A curated overview of the tools and technologies I use to build and operate cloud infrastructure.',
+    'skills.cat1':'Cloud Platforms','skills.cat2':'Infrastructure & IaC','skills.cat3':'DevOps & CI/CD',
+    'skills.cat4':'Programming','skills.cat5':'Databases','skills.cat6':'Operations & Governance',
+    'skills.leg.adv':'Advanced','skills.leg.mid':'Intermediate','skills.leg.base':'Familiar',
+    'certs.label':'// credentials','certs.title':'Certifications',
+    'certs.desc':'Industry-recognized certifications validating expertise across cloud, infrastructure, operations, and AI.',
+    'edu.label':'// academic background','edu.title':'Education',
+    'edu.desc':'Computer engineering foundations from Sapienza — one of Europe\'s most prestigious technical universities.',
+    'edu.deg1':'M.Sc. Engineering in Computer Science','edu.school':'Sapienza Università di Roma',
+    'edu.deg2':'B.Sc. Computer Engineering & Automation',
+    'edu.period1':'Oct 2018 — Oct 2020','edu.period2':'Sep 2015 — Oct 2018',
+    'proj.label':'// work & projects',
+    'proj.title':'Featured <span class="gradient-text">Projects</span>',
+    'proj.desc':'Notable projects and architectural work — coming soon.',
+    'proj.ph.title':'Projects coming soon',
+    'proj.ph.desc':'This section is ready for your case studies, side projects, and architectural write-ups.',
+    'contact.label':'// get in touch',
+    'contact.title':'Let\'s <span class="gradient-text">Connect</span>',
+    'contact.desc':'Open to interesting challenges and conversations — whether you have a project in mind or just want to talk cloud architecture.',
+    'contact.email.lbl':'Email','contact.phone.lbl':'Phone','contact.loc.lbl':'Location','contact.loc.val':'Padova, Italy',
+    'footer.by':'Designed & built by',
+    'footer.role':'Senior Cloud Architect & DevOps Engineer · Padova, Italy',
+    'scroll':'scroll',
+    'typed': ['Senior Cloud Architect','DevOps Engineer','AWS & GCP Specialist','Kubernetes Administrator','Infrastructure as Code Expert'],
+  },
+  it: {
+    'nav.about':'Chi sono','nav.exp':'Esperienza','nav.skills':'Competenze',
+    'nav.certs':'Certificazioni','nav.edu':'Formazione','nav.projects':'Progetti','nav.contact':'Contatti',
+    'hero.badge':'Disponibile per nuove opportunità',
+    'hero.desc':'Senior Cloud Architect & DevOps Engineer con oltre 5 anni di esperienza nella progettazione e deploy di infrastrutture cloud scalabili e resilienti su AWS e GCP — dall\'assessment iniziale alle operazioni in produzione.',
+    'hero.btn.contact':'Contattami','hero.btn.exp':'Vedi Esperienza',
+    'hero.stat.years':'Anni Esp.','hero.stat.certs':'Certificazioni','hero.stat.companies':'Aziende','hero.stat.clouds':'Cloud Platform',
+    'about.label':'// chi sono',
+    'about.title':'Costruire il <span class="gradient-text">layer cloud</span> di domani',
+    'about.p1':'Sono un <strong>Senior Cloud Architect &amp; DevOps Engineer</strong> con sede a Padova. Con oltre 5 anni nel settore IT, ho sviluppato una profonda esperienza nel guidare le organizzazioni attraverso la trasformazione cloud — dal design architetturale alle operazioni in produzione.',
+    'about.p2':'Il mio focus principale è l\'infrastruttura <strong>AWS e GCP</strong>: progettazione di architetture scalabili, sicure e ottimizzate in termini di costi, automazione dei deploy con Terraform, Kubernetes e strumenti CI/CD moderni. Ho guidato migrazioni di sistemi enterprise tra cui SAP 4HANA e SAP CRM.',
+    'about.p3':'Credo nel combinare esperienza pratica e solide basi teoriche — testimoniato da <strong>7 certificazioni di settore</strong> che coprono architettura cloud, amministrazione Kubernetes, networking avanzato, operations ITIL e leadership nell\'AI generativa.',
+    'about.card.aws':'Solutions Architect Pro','about.card.gcp':'Professional Cloud Arch.','about.card.cka':'Kubernetes Administrator','about.card.itil':'v4 Foundation Certified',
+    'exp.label':'// percorso professionale',
+    'exp.title':'Esperienza <span class="gradient-text">Professionale</span>',
+    'exp.desc':'Un percorso tra architettura cloud, DevOps e security engineering nelle principali società di consulenza IT italiane.',
+    'exp.role1':'Senior Cloud Architect / DevOps','exp.period1':'Feb 2025 — Presente','exp.badge1':'Attuale',
+    'exp.li1.1':'Operazioni DevOps a ciclo completo: design e configurazione di pipeline CI/CD con GitLab, Jenkins, Nexus, SonarQube, XLRelease, Helm, ArgoCD e Rancher',
+    'exp.li1.2':'Assessment e design di architetture cloud con focus su scalabilità, resilienza, sicurezza e ottimizzazione dei costi — in aderenza alle best practice e framework di riferimento',
+    'exp.li1.3':'Design e deploy di infrastrutture GCP tramite Infrastructure as Code (Terraform)',
+    'exp.li1.4':'Analisi multi-cloud e design infrastrutturale su GCP e AWS',
+    'exp.li1.5':'Gestione della GCP Foundation: struttura organizzativa, billing, standardizzazione degli ambienti, topologia di rete e governance delle policy',
+    'exp.role2':'Cloud Architect','exp.period2':'Mar 2021 — Feb 2025','exp.badge2':'4 anni',
+    'exp.li2.1':'Assessment, design architetturale e delivery end-to-end su AWS per clienti enterprise',
+    'exp.li2.2':'Guida delle migrazioni cloud su AWS di SAP 4HANA, SAP CRM, piattaforme di data ingestion e microservizi',
+    'exp.li2.3':'Infrastructure as Code con Terraform; amministrazione di architetture a microservizi su Kubernetes',
+    'exp.li2.4':'Governance ITIL Operations: Incident & Problem Management, Change Management, Risk Management, SLA',
+    'exp.li2.5':'Ruolo di Team Leader: valutazione tecnica ed economica e prioritizzazione delle attività di Delivery e MSP',
+    'exp.li2.6':'Provisioning e gestione di VM su ambienti Linux e Windows Server',
+    'exp.li2.7':'Utilizzo della suite Atlassian: Confluence, Jira, Bitbucket',
+    'exp.role3':'Cyber Security Engineer','exp.period3':'Ott 2020 — Mar 2021','exp.badge3':'6 mesi',
+    'exp.li3.1':'Valutazione e analisi dei rischi per sistemi PAM (Privileged Access Management)',
+    'exp.li3.2':'Definizione di misure di sicurezza per la mitigazione dei rischi e l\'allineamento alle best practice GDPR',
+    'skills.label':'// stack tecnologico',
+    'skills.title':'Competenze &amp; <span class="gradient-text">Tecnologie</span>',
+    'skills.desc':'Una panoramica degli strumenti e delle tecnologie che utilizzo quotidianamente per costruire e gestire infrastrutture cloud.',
+    'skills.cat1':'Piattaforme Cloud','skills.cat2':'Infrastruttura & IaC','skills.cat3':'DevOps & CI/CD',
+    'skills.cat4':'Programmazione','skills.cat5':'Database','skills.cat6':'Operations & Governance',
+    'skills.leg.adv':'Avanzato','skills.leg.mid':'Intermedio','skills.leg.base':'Base',
+    'certs.label':'// credenziali','certs.title':'Certificazioni',
+    'certs.desc':'Certificazioni riconosciute a livello internazionale che attestano competenze in cloud, infrastruttura, operations e AI.',
+    'edu.label':'// formazione accademica','edu.title':'Formazione',
+    'edu.desc':'Basi di ingegneria informatica alla Sapienza — una delle università tecniche più prestigiose d\'Europa.',
+    'edu.deg1':'Laurea Magistrale in Engineering in Computer Science','edu.school':'Sapienza Università di Roma',
+    'edu.deg2':'Laurea Triennale in Ingegneria Informatica e Automatica',
+    'edu.period1':'Ott 2018 — Ott 2020','edu.period2':'Set 2015 — Ott 2018',
+    'proj.label':'// lavori & progetti',
+    'proj.title':'Progetti <span class="gradient-text">in evidenza</span>',
+    'proj.desc':'Progetti architetturali e casi di studio — in arrivo.',
+    'proj.ph.title':'Progetti in arrivo',
+    'proj.ph.desc':'Questa sezione è pronta per i tuoi case study, progetti personali e articoli di architettura.',
+    'contact.label':'// contatti',
+    'contact.title':'<span class="gradient-text">Connettiamoci</span>',
+    'contact.desc':'Sempre aperto a sfide interessanti e nuove conversazioni — che tu abbia un progetto in mente o voglia semplicemente parlare di architetture cloud.',
+    'contact.email.lbl':'Email','contact.phone.lbl':'Telefono','contact.loc.lbl':'Posizione','contact.loc.val':'Padova, Italia',
+    'footer.by':'Progettato e sviluppato da',
+    'footer.role':'Senior Cloud Architect & DevOps Engineer · Padova, Italia',
+    'scroll':'scorri',
+    'typed': ['Senior Cloud Architect','DevOps Engineer','Specialista AWS & GCP','Kubernetes Administrator','Esperto di Infrastructure as Code'],
+  }
+};
+
+/* ================================================
+   THEME
+================================================ */
+let currentTheme = localStorage.getItem('mc-theme') || 'dark';
+
+function applyTheme(t) {
+  currentTheme = t;
+  document.body.classList.toggle('light', t === 'light');
+  document.getElementById('theme-btn').textContent = t === 'light' ? '🌙' : '☀️';
+  localStorage.setItem('mc-theme', t);
+}
+
+document.getElementById('theme-btn').addEventListener('click', () => {
+  applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+});
+
+/* ================================================
+   i18n
+================================================ */
+let currentLang = localStorage.getItem('mc-lang') || 'en';
+let typedInstance = null;
+
+function applyLang(lang) {
+  currentLang = lang;
+  const d = T[lang];
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const k = el.dataset.i18n;
+    if (d[k] !== undefined) el.textContent = d[k];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const k = el.dataset.i18nHtml;
+    if (d[k] !== undefined) el.innerHTML = d[k];
+  });
+
+  document.getElementById('la-en').classList.toggle('on', lang === 'en');
+  document.getElementById('la-it').classList.toggle('on', lang === 'it');
+  document.documentElement.lang = lang;
+  localStorage.setItem('mc-lang', lang);
+
+  /* restart typing with new phrases */
+  if (typedInstance) {
+    clearTimeout(typedInstance);
+    typedInstance = null;
+  }
+  startTyping(d.typed);
+}
+
+document.getElementById('lang-btn').addEventListener('click', () => {
+  applyLang(currentLang === 'en' ? 'it' : 'en');
+});
+
+/* ================================================
+   TYPING ANIMATION
+================================================ */
+function startTyping(phrases) {
+  const el = document.getElementById('typed-text');
+  el.textContent = '';
+  let pi = 0, ci = 0, del = false;
+  const S = { type:78, del:38, pause:2200 };
+
+  function run() {
+    const cur = phrases[pi];
+    if (!del) {
+      el.textContent = cur.slice(0, ++ci);
+      if (ci === cur.length) { del = true; typedInstance = setTimeout(run, S.pause); return; }
+    } else {
+      el.textContent = cur.slice(0, --ci);
+      if (ci === 0) { del = false; pi = (pi + 1) % phrases.length; }
+    }
+    typedInstance = setTimeout(run, del ? S.del : S.type);
+  }
+  run();
+}
+
+/* ================================================
+   CANVAS
+================================================ */
+(function () {
+  const canvas = document.getElementById('bg-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, nodes, raf;
+  const CFG = { count:55, maxDist:155, speed:.38, r:1.6, color:'79,142,247' };
+
+  function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+  function init() {
+    nodes = Array.from({length:CFG.count}, () => ({
+      x:Math.random()*W, y:Math.random()*H,
+      vx:(Math.random()-.5)*CFG.speed, vy:(Math.random()-.5)*CFG.speed,
+      r:CFG.r+Math.random()
+    }));
+  }
+  function tick() {
+    ctx.clearRect(0,0,W,H);
+    for (let i=0;i<nodes.length;i++) for (let j=i+1;j<nodes.length;j++) {
+      const dx=nodes[i].x-nodes[j].x, dy=nodes[i].y-nodes[j].y, d=Math.hypot(dx,dy);
+      if (d<CFG.maxDist) {
+        ctx.beginPath();
+        ctx.strokeStyle=`rgba(${CFG.color},${(1-d/CFG.maxDist)*.22})`;
+        ctx.lineWidth=.5;
+        ctx.moveTo(nodes[i].x,nodes[i].y); ctx.lineTo(nodes[j].x,nodes[j].y);
+        ctx.stroke();
+      }
+    }
+    nodes.forEach(n => {
+      ctx.beginPath(); ctx.arc(n.x,n.y,n.r,0,Math.PI*2);
+      ctx.fillStyle=`rgba(${CFG.color},.45)`; ctx.fill();
+      n.x+=n.vx; n.y+=n.vy;
+      if(n.x<0||n.x>W) n.vx*=-1;
+      if(n.y<0||n.y>H) n.vy*=-1;
+    });
+    raf=requestAnimationFrame(tick);
+  }
+  resize(); init(); tick();
+  window.addEventListener('resize',()=>{cancelAnimationFrame(raf);resize();init();tick();});
+})();
+
+/* ================================================
+   COUNTER
+================================================ */
+(function () {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el=e.target, target=+el.dataset.target, suffix=el.dataset.suffix||'';
+      let n=0; const step=target/28;
+      const t=setInterval(()=>{
+        n+=step;
+        if(n>=target){el.textContent=target+suffix;clearInterval(t);}
+        else el.textContent=Math.floor(n)+suffix;
+      },50);
+      io.unobserve(el);
+    });
+  });
+  document.querySelectorAll('[data-target]').forEach(c=>io.observe(c));
+})();
+
+/* ================================================
+   SCROLL REVEAL
+================================================ */
+(function () {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e=>{if(e.isIntersecting) e.target.classList.add('visible');});
+  },{threshold:.08});
+  document.querySelectorAll('.tl-item,.cert-card').forEach(el=>io.observe(el));
+
+  const io2 = new IntersectionObserver(entries => {
+    entries.forEach(e=>{if(e.isIntersecting) e.target.classList.add('visible');});
+  },{threshold:.05});
+  document.querySelectorAll('.sk-cat').forEach((el,i)=>{
+    el.style.transitionDelay=(i*.07)+'s'; io2.observe(el);
+  });
+})();
+
+/* ================================================
+   NAVBAR
+================================================ */
+(function(){
+  const nav=document.getElementById('navbar');
+  window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>20),{passive:true});
+})();
+
+/* ================================================
+   MOBILE MENU
+================================================ */
+(function(){
+  const btn=document.getElementById('mob-toggle'), links=document.getElementById('nav-links');
+  btn.addEventListener('click',()=>links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+})();
+
+/* ================================================
+   INIT
+================================================ */
+applyTheme(currentTheme);
+applyLang(currentLang);
+</script>
+</body>
+</html>
